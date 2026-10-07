@@ -1,0 +1,1 @@
+export default { content: ['./index.html', './src/**/*.{ts,tsx}'], theme: { extend: { colors: { ink: '#202b29', paper: '#f4f1e8', forest: '#28675a', coral: '#dc7055', ocean: '#48899a' }, fontFamily: { sans: ['DM Sans', 'sans-serif'], display: ['Newsreader', 'serif'], mono: ['DM Mono', 'monospace'] } } }, plugins: [] }
