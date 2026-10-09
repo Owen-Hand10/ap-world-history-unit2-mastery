@@ -427,7 +427,7 @@ export const mcqBank: CurriculumQuestion[] = units.flatMap(unit => unit.terms.ma
       explanation: `${term.significance} ${term.whyItMatters}.`,
     }
   }),
-))
+);
 
 export type SAQPrompt = { id: string; unitId: number; prompt: string; answerKey: string[] }
 export const saqBank: SAQPrompt[] = units.flatMap(unit => Array.from({ length: 25 }, (_, index) => {
