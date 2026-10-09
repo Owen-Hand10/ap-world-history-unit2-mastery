@@ -74,9 +74,12 @@ export function UnitPage({ progress, record }: PageProps) {
       <div className="unit-header-score"><span>{mastery}%</span><small>practice accuracy</small><div className="progress-track"><i style={{ width: `${mastery}%` }} /></div></div>
     </header>
     <div className="unit-switcher"><span className="eyebrow">COURSE MAP</span><div>{units.map(item => <Link aria-label={`Unit ${item.id}: ${item.title}`} title={item.title} className={item.id === unit.id ? 'selected' : ''} to={`/unit/${item.id}`} key={item.id}>{item.id}</Link>)}</div><Link className="text-link" to="/review">Exam review <ArrowRight size={14} /></Link></div>
-    <nav className="unit-section-nav" aria-label={`${unit.title} study sections`}>{sections.map(([id, label]) =>
-      <button key={id} className={activeSection === id ? 'active' : ''} onClick={() => showSection(id)}>{label}</button>)}</nav>
-    {unit.id === 2 && <div className="legacy-toolkit"><Sparkles size={15} /><span>Original Unit 2 study tools are still available.</span><Link to="/learn">Field guides</Link><Link to="/flashcards">Original flashcards</Link><Link to="/practice">Original question bank</Link><Link to="/games">Original games</Link><Link to="/exam">Original AP writing prompts</Link></div>}
+    <label className="unit-study-nav"><span>CHOOSE A STUDY AREA</span><select aria-label={`Choose a ${unit.title} study area`} value={activeSection} onChange={event => showSection(event.target.value)}>
+      <optgroup label="Learn">{[['overview', 'Study guide'], ['developments', 'Major developments'], ['concepts', 'Key concepts'], ['timeline', 'Timeline'], ['lesson', 'Guided lesson'], ['terms', 'Vocabulary']].map(([id, label]) => <option key={id} value={id}>{label}</option>)}</optgroup>
+      <optgroup label="Practice">{[['flashcards', 'Flashcards'], ['quiz', 'Practice quiz'], ['mcq', 'AP-style multiple choice'], ['saq', 'Short-answer practice'], ['leq', 'Long-essay practice'], ['game', 'Review game']].map(([id, label]) => <option key={id} value={id}>{label}</option>)}</optgroup>
+      <optgroup label="Track progress"><option value="progress">Unit progress</option></optgroup>
+    </select></label>
+    {unit.id === 2 && <details className="legacy-toolkit"><summary><Sparkles size={15} />More Unit 2 study tools</summary><div className="legacy-toolkit-links"><Link to="/learn">Field guides</Link><Link to="/flashcards">Original flashcards</Link><Link to="/practice">Original question bank</Link><Link to="/games">Original games</Link><Link to="/exam">Original AP writing prompts</Link></div></details>}
     <UnitSection unit={unit} section={activeSection} stats={stats} record={record} />
   </div>
 }
@@ -106,8 +109,9 @@ function OverviewSection({ unit, stats }: { unit: Unit; stats: UnitStats }) {
     </div>
     <UnitVisualization unitId={unit.id} />
     <section className="curriculum-panel"><div className="panel-heading"><div><span className="eyebrow">WHAT TO LEARN</span><h3>Major developments</h3></div><Link to={`/unit/${unit.id}/developments`} className="text-link">All developments <ArrowRight size={14} /></Link></div><div className="development-list">{unit.developments.slice(0, 3).map((item, index) => <div key={item}><span>0{index + 1}</span><p>{item}</p></div>)}</div></section>
+    <section className="curriculum-panel unit-study-guide"><div className="panel-heading"><div><span className="eyebrow">AP COURSE ALIGNMENT</span><h3>What you should be able to explain</h3></div><div className="unit-study-sources"><a className="text-link" href="https://apcentral.collegeboard.org/media/pdf/ap-world-history-modern-course-and-exam-description.pdf" target="_blank" rel="noreferrer">College Board course guide ↗</a><a className="text-link" href="https://www.oerproject.com/World-History-1200" target="_blank" rel="noreferrer">Free World History readings ↗</a></div></div><ul>{unit.studyGuide.map(item => <li key={item}>{item}</li>)}</ul><small>Study targets are paraphrased from the College Board Course and Exam Description.</small></section>
     <section className="curriculum-panel next-event-panel"><div><span className="eyebrow">A MOMENT IN THE TIMELINE</span><h3>{example.title}</h3><p>{example.date} · {example.summary}</p><small>AP connection: {example.apConnection}</small></div><Link to={`/unit/${unit.id}/timeline`} className="button button-outline">Explore timeline <ArrowRight size={14} /></Link></section>
-    <div className="unit-shortcuts">{sections.filter(([id]) => ['terms', 'flashcards', 'lesson', 'quiz', 'mcq', 'saq', 'leq', 'game'].includes(id)).map(([id, label]) => <Link key={id} to={`/unit/${unit.id}/${id}`}><span>{label}</span><ArrowRight size={14} /></Link>)}</div>
+    <section className="unit-study-actions"><span className="eyebrow">A SIMPLE STUDY ROUTE</span><div><Link to={`/unit/${unit.id}/lesson`}><strong>1 · Learn</strong><small>Review the key developments</small><ArrowRight size={15} /></Link><Link to={`/unit/${unit.id}/quiz`}><strong>2 · Practice</strong><small>Check what you remember</small><ArrowRight size={15} /></Link><Link to={`/unit/${unit.id}/saq`}><strong>3 · Apply</strong><small>Write an AP-style response</small><ArrowRight size={15} /></Link></div></section>
   </div>
 }
 

@@ -22,6 +22,7 @@ export type Unit = {
   period: string
   overview: string
   theme: string
+  studyGuide: string[]
   developments: string[]
   concepts: string[]
   terms: CurriculumTerm[]
@@ -36,6 +37,11 @@ const rawUnits: RawUnit[] = [
     id: 1, title: 'The Global Tapestry', period: '1200–1450',
     overview: 'Explore how states and societies developed in different regions before expanding interregional connections reshaped the world.',
     theme: 'Governance and regional societies',
+    studyGuide: [
+      "Compare how states in East Asia, South and Southeast Asia, Africa, the Americas, and Europe organized power.",
+      "Explain how bureaucracies, religious traditions, military elites, and trade supported rulers and societies.",
+      "Use examples to show both continuity and innovation in state formation from c. 1200 to c. 1450.",
+    ],
     developments: ['Song China combined a sophisticated bureaucracy with commercial growth and new agricultural production.', 'Islamic states and networks connected communities across Afro-Eurasia even as political authority became decentralized.', 'South and Southeast Asian rulers supported diverse Hindu, Buddhist, and Islamic traditions.', 'Japanese and European political systems relied on layered landholding and warrior elites.', 'African states grew through regional trade, agriculture, and control of valuable resources.'],
     concepts: ['State-building drew on bureaucracy, military power, and elite relationships.', 'Belief systems helped rulers legitimize authority and shape social life.', 'Trade enriched some states and linked local economies to regional markets.', 'Geography and agricultural innovation influenced population growth and urbanization.'],
     rawTerms: [
@@ -70,6 +76,11 @@ const rawUnits: RawUnit[] = [
     id: 2, title: 'Networks of Exchange', period: '1200–1450',
     overview: 'Trace how merchants, empires, and travelers connected Afro-Eurasia through land and sea routes—and how goods, ideas, and disease moved with them.',
     theme: 'Trade and cultural exchange',
+    studyGuide: [
+      "Compare how geography, transport technology, and merchant practices supported the Silk Roads, Indian Ocean, and Trans-Saharan networks.",
+      "Explain how Mongol rule changed travel, communication, and exchange across Eurasia.",
+      "Trace both benefits and costs of connectivity, including cultural diffusion and the spread of epidemic disease.",
+    ],
     developments: ['Silk Roads trade grew through caravanserai, credit, and merchant partnerships.', 'Indian Ocean commerce relied on monsoon knowledge, ship technology, and diasporic communities.', 'Trans-Saharan trade expanded with camel transport and the growth of West African states.', 'Mongol rule created a period of greater security and communication across much of Eurasia.', 'Trade networks spread religions, technologies, and epidemic disease alongside commodities.'],
     concepts: ['Environmental knowledge and technology made long-distance exchange possible.', 'States protected, taxed, or competed to control trade routes.', 'Merchant communities transmitted culture and connected distant markets.', 'Connectivity brought both prosperity and vulnerability, including pandemic disease.'],
     rawTerms: [
@@ -107,6 +118,11 @@ const rawUnits: RawUnit[] = [
     id: 3, title: 'Land-Based Empires', period: '1450–1750',
     overview: 'Examine how expanding gunpowder empires built power, governed diverse populations, and used religion and art to legitimize rule.',
     theme: 'Empire and state-building',
+    studyGuide: [
+      "Compare how land-based empires used military power, administration, and belief systems to consolidate rule.",
+      "Explain how rulers recruited elites and managed diverse populations across large territories.",
+      "Connect imperial expansion to changes in trade, social hierarchies, and regional power from 1450 to 1750.",
+    ],
     developments: ['Ottoman, Safavid, and Mughal rulers used gunpowder weapons and centralized administration.', 'Empires used bureaucracies, military elites, and taxation to govern large territories.', 'Rulers supported monumental architecture and court culture to legitimize power.', 'Religious policies varied, shaping imperial stability and conflict.', 'The Ottoman-Safavid rivalry reflected both political competition and Sunni-Shia division.'],
     concepts: ['Military technology helped rulers expand but did not alone sustain empire.', 'Imperial administration balanced central authority with regional elites.', 'Rulers used religious legitimacy, art, and architecture to strengthen authority.', 'Policies toward religious diversity shaped relationships between rulers and subjects.'],
     rawTerms: [
@@ -139,6 +155,11 @@ const rawUnits: RawUnit[] = [
     id: 4, title: 'Transoceanic Interconnections', period: '1450–1750',
     overview: 'Study how oceanic voyages connected hemispheres, created new empires, and transformed populations, environments, and economies.',
     theme: 'Oceanic exploration and exchange',
+    studyGuide: [
+      "Explain how navigation, ships, and state sponsorship expanded transoceanic connections after 1450.",
+      "Trace the Columbian Exchange and explain its demographic, environmental, and economic consequences.",
+      "Compare how overseas commerce changed labor systems, including coerced labor and slavery.",
+    ],
     developments: ['Maritime technology and state competition drove European oceanic voyages.', 'The Columbian Exchange transferred plants, animals, people, and diseases between hemispheres.', 'European empires used coercive labor systems and settler colonialism in the Americas.', 'The Atlantic slave trade forcibly displaced millions of Africans.', 'Joint-stock finance and mercantilist policies linked state power to global commerce.'],
     concepts: ['State sponsorship and maritime technology enabled transoceanic expansion.', 'Biological exchange reshaped environments and populations unevenly.', 'Coercive labor underpinned plantation and mining economies.', 'Commercial competition strengthened links between states, merchants, and colonies.'],
     rawTerms: [
@@ -169,6 +190,11 @@ const rawUnits: RawUnit[] = [
     id: 5, title: 'Revolutions', period: '1750–1900',
     overview: 'Investigate how Enlightenment ideas, social tensions, and economic change inspired revolutions and new political identities.',
     theme: 'Political and social transformation',
+    studyGuide: [
+      "Explain how Enlightenment ideas influenced political revolutions and challenges to established authority.",
+      "Compare revolutionary movements and assess how far they changed political and social hierarchies.",
+      "Connect industrialization, nationalism, and reform to broader changes from 1750 to 1900.",
+    ],
     developments: ['Enlightenment thinkers questioned inherited authority and articulated rights and sovereignty.', 'Revolutions in the Americas and France challenged monarchies and imperial rule.', 'The Haitian Revolution ended slavery and created an independent state.', 'Nationalism and liberalism challenged old empires and political hierarchies.', 'The Industrial Revolution transformed production and intensified social change.'],
     concepts: ['Revolutions drew on both intellectual ideas and material grievances.', 'Political change was uneven and often excluded women, enslaved people, and the poor.', 'Nationalism could unify populations and challenge multinational empires.', 'Reform and reaction accompanied revolutionary change.'],
     rawTerms: [
@@ -200,6 +226,11 @@ const rawUnits: RawUnit[] = [
     id: 6, title: 'Consequences of Industrialization', period: '1750–1900',
     overview: 'Analyze the social, economic, and environmental effects of industrial growth, including capitalism, new ideologies, and imperialism.',
     theme: 'Industrial economies and global power',
+    studyGuide: [
+      "Explain how industrial economies encouraged imperial expansion and competition for resources and markets.",
+      "Compare voluntary and coerced migration and connect each to economic change.",
+      "Assess how imperialism and industrialization reshaped societies and how people resisted or adapted.",
+    ],
     developments: ['Industrialization spread beyond Britain and accelerated through new energy and technologies.', 'Capitalist and socialist thinkers debated wealth, labor, ownership, and inequality.', 'Industrial states sought raw materials and markets through imperial expansion.', 'New social classes, labor movements, and urban conditions emerged.', 'Racial ideologies were used to justify imperial domination and unequal global power.'],
     concepts: ['Industrial production changed labor systems and social hierarchies.', 'Economic ideologies offered competing explanations of wealth and inequality.', 'Industrial capacity expanded the military and economic power of imperial states.', 'Resistance and reform challenged exploitative working and colonial conditions.'],
     rawTerms: [
@@ -230,6 +261,11 @@ const rawUnits: RawUnit[] = [
     id: 7, title: 'Global Conflict', period: '1900–present',
     overview: 'Examine how industrial warfare, nationalism, ideological conflict, and mass violence transformed societies during the world wars and beyond.',
     theme: 'War and global conflict',
+    studyGuide: [
+      "Explain the long-term and immediate causes of the two world wars and weigh their relative importance.",
+      "Connect industrial technology and total war to changes in states, economies, and civilian life.",
+      "Compare political transformations during and after global conflict from 1900 to 1945.",
+    ],
     developments: ['Industrialized warfare and alliances turned regional crises into world wars.', 'World War I weakened empires and contributed to revolution and political instability.', 'Fascist regimes used nationalism, mass politics, and repression to consolidate power.', 'World War II involved total war, genocide, and the use of nuclear weapons.', 'International institutions emerged in an effort to prevent renewed global conflict.'],
     concepts: ['Industrial technology increased the scale and lethality of warfare.', 'Nationalism and alliances shaped the causes and spread of conflict.', 'War transformed states, economies, populations, and political ideologies.', 'Mass violence and genocide expose the consequences of extreme state power.'],
     rawTerms: [
@@ -261,6 +297,11 @@ const rawUnits: RawUnit[] = [
     id: 8, title: 'Cold War and Decolonization', period: '1900–present',
     overview: 'Follow the ideological rivalry between superpowers and the independence movements that transformed Asia, Africa, and the Caribbean.',
     theme: 'Cold War and independence',
+    studyGuide: [
+      "Explain how ideological rivalry between the United States and Soviet Union shaped global conflicts and alliances.",
+      "Compare paths to decolonization and the strategies newly independent states used to pursue autonomy.",
+      "Assess the role of nonalignment, nationalism, and social movements during the Cold War era.",
+    ],
     developments: ['The United States and Soviet Union competed through alliances, aid, technology, and proxy wars.', 'Decolonization accelerated after World War II as nationalist movements challenged European empires.', 'Leaders and movements used different strategies, from mass civil disobedience to armed struggle.', 'Newly independent states sought economic development and political autonomy.', 'Nonalignment offered an alternative to formal alignment with either superpower.'],
     concepts: ['Superpower competition shaped conflicts and political choices beyond Europe.', 'Anti-colonial nationalism drew on local grievances and global principles of self-determination.', 'Independence did not automatically resolve economic inequality or internal divisions.', 'New states negotiated autonomy within an unequal global order.'],
     rawTerms: [
@@ -291,6 +332,11 @@ const rawUnits: RawUnit[] = [
     id: 9, title: 'Globalization', period: '1900–present',
     overview: 'Explore growing global interdependence through trade, technology, migration, culture, environmental change, and international institutions.',
     theme: 'Global interdependence',
+    studyGuide: [
+      "Explain how technology and economic integration changed production, communication, and everyday life after 1900.",
+      "Analyze globalization's effects on culture, health, the environment, and relations among states.",
+      "Compare groups' support for, adaptation to, and resistance against globalization.",
+    ],
     developments: ['Digital and transportation technologies accelerate communication and exchange.', 'Trade institutions and multinational corporations connect production across borders.', 'The Green Revolution increases agricultural yields but produces uneven social and environmental effects.', 'Cultural diffusion increases even as communities debate identity and homogenization.', 'Climate change, pandemics, and human rights concerns require transnational responses.'],
     concepts: ['Technology compresses time and distance but does not erase inequality.', 'Global production links consumers, workers, firms, and states across borders.', 'Cultural exchange can create hybrid forms as well as resistance.', 'Global challenges cross national boundaries and require cooperation.'],
     rawTerms: [
@@ -357,8 +403,11 @@ const questionPatterns: { type: MCQType; build: (term: CurriculumTerm, variation
   { type: 'Historical interpretation', build: term => ({ prompt: 'Which term would provide the strongest evidence for this historical argument?', stimulus: `ARGUMENT · ${term.apExample}` }) },
 ]
 
-export const mcqBank: CurriculumQuestion[] = units.flatMap(unit => unit.terms.flatMap((term, termIndex) =>
-  questionPatterns.map((pattern, variation) => {
+// Keep one question per key term in each practice set so the same answer is not
+// repeated through near-identical prompt variations.
+export const mcqBank: CurriculumQuestion[] = units.flatMap(unit => unit.terms.map((term, termIndex) => {
+    const variation = termIndex % questionPatterns.length
+    const pattern = questionPatterns[variation]
     const { prompt, stimulus } = pattern.build(term, variation)
     const distractors = Array.from({ length: 3 }, (_, offset) => unit.terms[(termIndex + 1 + variation + offset * 3) % unit.terms.length].term)
       .filter((value, index, values) => value !== term.term && values.indexOf(value) === index)
