@@ -357,8 +357,11 @@ const questionPatterns: { type: MCQType; build: (term: CurriculumTerm, variation
   { type: 'Historical interpretation', build: term => ({ prompt: 'Which term would provide the strongest evidence for this historical argument?', stimulus: `ARGUMENT · ${term.apExample}` }) },
 ]
 
-export const mcqBank: CurriculumQuestion[] = units.flatMap(unit => unit.terms.flatMap((term, termIndex) =>
-  questionPatterns.map((pattern, variation) => {
+// Keep one question per key term in each practice set so the same answer is not
+// repeated through near-identical prompt variations.
+export const mcqBank: CurriculumQuestion[] = units.flatMap(unit => unit.terms.map((term, termIndex) => {
+    const variation = termIndex % questionPatterns.length
+    const pattern = questionPatterns[variation]
     const { prompt, stimulus } = pattern.build(term, variation)
     const distractors = Array.from({ length: 3 }, (_, offset) => unit.terms[(termIndex + 1 + variation + offset * 3) % unit.terms.length].term)
       .filter((value, index, values) => value !== term.term && values.indexOf(value) === index)
